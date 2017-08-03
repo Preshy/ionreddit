@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>
+      Settings
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form (submit)="setDefaults()">
+    <ion-list>
+        Current Category: <b>{{currentCategory | uppercase }}</b> <br>
+        Current Limit: <b>{{currentLimit}}</b>
+        <ion-item>
+            <ion-label fixed> Category </ion-label>
+            <ion-select [(ngModel)]="category" name="category">
+                <ion-option value="sports"> Sports </ion-option>
+                <ion-option value="food"> Food </ion-option>
+                <ion-option value="tech"> Technology </ion-option>
+                <ion-option value="news"> News </ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed> Limit </ion-label>
+            <ion-select [(ngModel)]="limit" name="limit">
+                <ion-option value="10">10</ion-option>
+                <ion-option value="20">20 </ion-option>
+                <ion-option value="50"> 50 </ion-option>
+                <ion-option value="100"> 100 </ion-option>
+            </ion-select>
+        </ion-item>
+        <br />
+        <button ion-button type="submit" block color="danger">Save Changes</button>
+
+    </ion-list>
+    </form>
+</ion-content>
